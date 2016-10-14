@@ -1,0 +1,264 @@
+```<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <title>Basic Functions</title>
+
+    <meta charset="UTF-8" />
+
+    <style>
+
+      body {
+
+        background-color: aqua;
+
+      }
+
+
+
+      div {
+
+        margin: 2px auto;
+
+      }
+
+
+
+      #main {
+
+        border-style: solid;
+
+        min-height: 1500px;
+
+      }
+
+
+
+      .centered_text {
+
+        text-align: center;
+
+      }
+
+
+
+      .correct {
+
+        color: green;
+
+      }
+
+
+
+      .incorrect {
+
+        color: green;
+
+      }
+
+      #part_one {
+        background-color:red;
+      }
+
+      #part_two {
+
+        border-style: solid;
+
+        border-color: red;
+
+        width: 80%;
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <h1>This short assessement is meant to help you feel confident!</h1>
+
+      <h2>Everthing in this assessment should be familair, or at the very least I believe you'll be able to google for the answers!</h2>
+
+      <h2>Try to do this on your own, to get a sense of how you're picking things up!</h2>
+
+    </header>
+
+    <div id="main">
+
+    
+      <div id="part_one" class="centered_text">
+
+
+        <h3>Your first task. Change the background color of the body to whatever you want.</h3>
+
+        <h3>Second, change the background color of this div to another color.</h3>
+
+        <p>*Hint* This &ltp&gt element as well as the above h3 tags are children of "this" div. <br />But borders may not be the best way to see which div is which</p>
+
+        <h3><p> <font color='red'>Last, change the font color for all text in this div to whatever color you want. **hint** Don't over think it, it's easier than you think :)</h3> </font>
+
+      </div>
+
+      <div id="part_two" class="centered_text">
+
+        <h3>Next, multiple choice. Feel free to Google!</h3>
+
+        <p>If we wanted to move our styling (CSS) to an external .css file in the same folder as our .html, which would be the proper way?</p>
+
+        <span id="part_two_result"></span>
+
+        1.&nbsp<span>&ltcss path="path/to/file.css" /&gt &nbsp <input type="radio" name="first_question" value="one" />
+
+        <br />
+
+        2.&nbsp<span>&ltlink rel="stylesheet" src="path/to/file.css" /&gt &nbsp<input type="radio" name="first_question" value="two">
+
+        <br />
+
+        3.&nbsp<span>&ltlink rel="stylesheet" href="path/to/file.css" /&gt&nbsp<input type="radio" name="first_question" value="three" />
+
+        <br />
+
+        <button onclick="checkAns('part_two', 'part_two_result')">Submit</button>
+
+      </div>
+
+      <div id="part_three">
+
+        <div class="centered_text">
+
+          <h3>What's a</h3> &ltscript&gt <h3>tag for?</h3>
+
+          <span id="part_three_answer"></span>
+
+          1. &nbsp<span>For css</span>&nbsp<input type="radio" name="second_question" value="one" /> <br />
+
+          2. &nbsp<span>For C++</span>&nbsp<input type="radio" name="second_question" value="two" /> <br />
+
+          3. &nbsp<span>Javascript</span>&nbsp<input type="radio" name="second_question" value="three" /> <br />
+
+          <button onclick="checkAns('part_three', 'part_three_answer')">Check Answer</button>
+
+        </div>
+
+        <div class="centered_text">
+
+          <h3>Last bit! There are some script tags with a challenge and a function for you to fill out. You can do it! (Not in the browser, it's time to code :)</h3>
+
+        </div>
+
+        <span id="part_four_ans">This should change</span>
+
+        <script>
+
+          // Make a variable called partFourAns and assign it the value of a string. Any string you want with a length greater than 0!
+
+          // Inside of the function below (So maybe like linke 83? )
+
+          // You should see the text in the browser change when you do it!
+
+
+
+
+
+          (function immediatelyCalled() {
+            var partFourAns = 'This is a string';
+
+
+            if ( partFourAns.length > 0) {
+
+              document.getElementById('part_four_ans').textContent = partFourAns;
+
+            }
+
+          }());
+
+
+
+          // Ok, here's the hard part.
+
+          // Make a function called largestOfThree
+
+          // largestOfThree takes three parameters (remember parameters? If not, google them!)
+
+          // When invoked (when the function is called) largestOfThree should return the largest of the three numbers it receives as arguments (Don't remember arguments? Maybe check out the javascript function syntax reminder over at: http://www.w3schools.com/js/js_functions.asp
+
+          // )
+
+          function idontknow (p1, p2, p3) {
+            var largest = p1;
+             
+            if (p2> largest){
+               second;
+
+            if (largest > second) {
+              return largest;
+            } else {
+
+             return second;
+            }
+          }
+          var myVar=idontknow(3,2 , 1)
+          console.log(myVar =idontknow= p3)
+          
+
+          // Next, can you assign the result of calling largestOfThree ( with 3 numbers of your choosing ) to a variable called myVar
+
+
+
+          // Lastly, can you make myVar appear in the developer's console? What about as a pop up (alert)?
+
+
+
+        </script>
+
+      </div>
+
+    </div>
+
+    <script>
+
+      function checkAns(questionDiv, answerSpot) {
+
+        var res = document.getElementById(answerSpot);
+
+        res.textContent = '';
+
+        var target = document.getElementById(questionDiv);
+
+        var inputs = target.getElementsByTagName('input');
+
+        for (var i = 0; i < inputs.length; i++) {
+
+          if (inputs[i].checked) {
+
+            var answer = inputs[i].value;
+
+          }
+
+        }
+
+        var response;
+
+        response = answer === 'three' ? 'That\'s it!' : 'Try again';
+
+        var p = document.createElement('p');
+
+        p.textContent = response;
+
+        p.className = answer === 'three' ? 'correct' : 'incorrect';
+
+        res.appendChild(p);
+
+      }
+
+    </script>
+
+  </body>
+
+</html>```

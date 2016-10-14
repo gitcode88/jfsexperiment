@@ -1,0 +1,323 @@
+Here’s today’s warm up exercise!
+
+```<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <title>Using Buttons And Stuff</title>
+
+    <meta charset="UTF-8">
+
+    <style>
+
+      body {
+
+        background-color: aliceblue;
+
+      }
+
+      .container {
+
+        border-style: solid;
+
+        border-width: 3px;
+
+        width: 300px;
+
+        height: 200px;
+
+        margin: 5px;
+
+      }
+
+      .counter_item {
+
+        margin: 5px;
+
+      }
+
+      #user_name {
+
+        width: 290px;
+
+        margin-left: 2px;
+
+      }
+
+    </style>
+
+  </head>
+
+    <!-- HTML elements for display go in the body tag -->
+
+  <body>
+
+    <!-- This div has a "event handler" added to it below. -->
+
+    <div id="colorful" class="container">
+
+      <p>This div's color changes when the mouse "enters" it's space!</p>
+
+    </div>
+
+    <div id="counter" class="container">
+
+      <!-- We added an event listener to this button below in the script tags. -->
+
+      <button id="add" class="counter_item">Add One</button>
+
+      <div id="count" class="counter_item"></div>
+
+      <!-- Buttons also have a onclick method as seen below. It adds the click handler for you, and you just have to invoke the function like I did there with subtract(). Let's look at what subract looks like inside! That function is defined on line 90. -->
+
+      <button onclick="subtract()" class="counter_item">Subtract One</button>
+
+    </div>
+
+    <script>
+
+      // single line commment in javscript
+
+      /*
+
+        Multi-line
+
+        comment in
+
+        javascrpt.
+
+      */
+
+      // This will be the number that is displayed in the div with the id count
+
+      var totalToDisplay = 0;
+
+      // This function displays the above variable when the page loads.
+
+      // Don't worry if you don't remember what document is, we'll talk it again next week.
+
+      document.getElementById('count').textContent = totalToDisplay;
+
+      // First we need a pointer or label for the elements we're adding the click handlers to.
+
+      // Let's start by adding variable labels or pointers to the add button
+
+      var addButton = document.getElementById('add');
+
+      // Next we can add an event listener. The event we'll listen for is a click event.
+
+      addButton.addEventListener('click', function() {
+
+        // So this is weird. We're passing a function to a function as an arugment!
+
+        // If it's making your brain hurt, that's fine. We'll talk about this again together
+
+        // Probably the week after next.
+
+        // So what do we do inside of this function?
+
+        // We want to add one to the variable totalToDisplay
+
+        // and then we want to update the DOM (the view in the browser)
+
+        // well, we can add one using one of three methods
+
+        /*
+
+          we can say totalToDisplay = totalToDisplay + 1; (reassign the variable itself plus one)
+
+          or we can say totalToDisplay += 1 (Short hand for the above, does the same thing)
+
+          ** Note that the above two operators work for any mathmatical operation. -=, /=, *=, even %= !
+
+          or we can say totalToDisplay++; (The ultimate shorthand for plus one. It also works for -- as in minus one. But not the other operators! Like there is no ** or // )
+
+        */
+
+        // So, let's do it! Add one to the totalToDisplay variable
+
+        // The Computer Science-y way to say add one is increment
+
+        totalToDisplay += 1;
+
+        // Lastly, we update the DOM.
+
+        document.getElementById('count').textContent = totalToDisplay;
+
+        // And that's it! A lot of comments, but not a lot of code at all!
+
+      });
+
+      function subtract() {
+
+        // first we decrement totalToDisplay (decrement means subtract one in CS speak.)
+
+        totalToDisplay--;
+
+        document.getElementById('count').textContent = totalToDisplay;
+
+      }
+
+      /*
+
+       * These extra stars aren't necessary, they just look cool
+
+       * This example may be a bit overly complex.
+
+       * Don't let it discourage you, but please check out how it's working!
+
+       * I tried to add a lot of comments, but it does gloss over some things
+
+       * That we're not going to get into until next week as a group.
+
+       * But if you're curious, feel free to google and read about it!
+
+      */
+
+      // This variable is for the div with the id of "colorful". We could call it anything, but I'm trying for good and obvious naming conventions.
+
+      var divThatChangesColor = document.getElementById('colorful');
+
+      // This is called an array. It's a data structure we'll talk about next week.
+
+      var arrayOfColors = ['fuchsia', 'lime', 'teal', 'antiquewhite', 'azure', 'aquamarine', 'mediumaquamarine', 'bisque', 'cornflowerblue', 'paleturqoise', 'rebeccapurple'];
+
+      // this adds the event listener to the div. The event we listen for is a 'mouseenter'
+
+      divThatChangesColor.addEventListener('mouseenter', function() {
+
+        // Don't worry too much about what's going on here, it may be a bit complex.
+
+        // Essentially we're grabbing a random index number
+
+        var index = Math.floor(Math.random() * arrayOfColors.length);
+
+        // and here we're using that random number to use javascript to change the css of the div.
+
+        divThatChangesColor.style.color = arrayOfColors[index];
+
+      });
+
+    </script>
+
+    <!-- So here's your exercise for the "morning" area. -->
+
+    <div class="container">
+
+      <input type="text" placeholder="mr ms or blank" id="salutation">
+
+      <!-- So here we'll get the user input and collect it in the javascript below -->
+
+      <input type="text" placeholder="your name" id="user_name">
+
+      <!-- and this is the button they can use to submit -->
+
+      <button id="user_submit">Submit</button>
+
+      <!-- The user's name will appear here if they press enter or click the button! -->
+
+      <div id="display_name"></div>
+
+    </div>
+
+    <script>
+
+      // Whoa, you can have as many script tags in your html page as you want!
+
+      // First, variables for:
+
+      var userInputField = document.getElementById('user_name');
+
+      var submitButton = document.getElementById('user_submit');
+
+      var displayDiv = document.getElementById('display_name');
+
+      var userInput; // This will be where we store the user input when they give us their name
+
+      // This will keep our code tidier. DRY-er than it was in the last example
+
+      /* Coder's mantra is keep your code DRY.
+
+       * Don't
+
+       * Repeat
+
+       * Yourself
+
+      */
+
+      // So next we can define a function to be called by our event handlers.
+
+      // We need to define them first if we're going to reference them by name in our event handlers.
+
+      // Above we just created the anonymous functions as we went.
+
+      // Let's make a function called greetUser
+
+      function greetUser() {
+
+        // first we grab the input from the user
+
+        userInput = userInputField.value;
+
+        // Next we find out the users' salutation preference
+
+        var salutation = document.getElementById('salutation').value;
+
+        var displayName; // This will be the string that we append to the DOM with the user's name and proper salution.
+
+        /* Your task:
+
+          If salutation is mr, displayName should be Mr. Whatever User Input
+
+          If salutation is ms, displayName should be Ms. Whatever User Input
+
+          If salutation is blank, displayName should be Mx. Whatever User Input
+
+        */
+
+        // **HINT** You can use salutation.toUpperCase() to make it all caps, or salutation.toLowerCase() to make is all lower cased!
+
+        // Once you've build displayName, it should get appended to the DOM because of this line
+
+        displayDiv.textContent = displayName;
+
+        // lastly we clear the input element's value
+
+        userInputField.value = '';
+
+      }
+
+      // Next we can add our event listeners.
+
+      // First our "submit" button will call greetUser when it's pressed
+
+      submitButton.addEventListener('click', greetUser);
+
+      // Next we can add an event listener to the acutal input element that checks for a key press event
+
+      userInputField.addEventListener('keypress', function(event) {
+
+        // console.log(event); // Uncomment this line to check out what the event object looks like!
+
+        // We'll talk about objects next week. Another data structure.
+
+        // first, we check to see if they pressed enter by using the keycode
+
+        if (event.which === 13) { // which represents which key. The keycode for enter is 13
+
+          // If it was, we call our greetUser function. Otherwise we do nothing.
+
+          greetUser();
+
+        }
+
+      })
+
+    </script>
+
+  </body>
+
+</html>```

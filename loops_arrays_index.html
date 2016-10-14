@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <title>Loops And Arrays</title>
+
+    <meta charset="UTF-8" />
+
+    <style>
+
+      header {
+
+        text-align: center;
+
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <h1>Loops and Arrays</h1>
+
+      <p>Check out the docs (or w3schools if you prefer). Here's the link to mdn: <br />
+
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while">While Loop</a><br />
+
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">For Loop</a><br />
+
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Arrays</a><br />
+
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">Strings</a><br />
+
+      </p>
+
+    </header>
+
+    <script>
+
+      /*****************************************************************************************
+
+        * Essentially, an array is a list of any type of values wrapped in square brackets []
+
+        * (By values, I mean boolean (true/false), string ('true', "(whatever in quotes)!")
+
+        * and numbers (1, 2, 3.14) which are all data types we've seen so far.)
+
+        * An array is a new data type for us, our first "data structure".
+
+        * So yes, arrays can hold other arrays, since arrays are data types.
+
+        * Remember that stringName.length method we used to find the length of strings?
+
+        * Well, arrayName.length will return the length of an array as well.
+
+        * an array of numbers: [1, 2, 3, 4, 5]
+
+        * an array of strings: ['one', 'two', 'a', 'b', 'c']
+
+        * an array of mixed values: [1, 'one', true]
+
+        * an array of arrays: var animals = [['fluffy', 'mittens'], ['rover', 'fido']];
+
+        * Notice like all data types, we can assign an array to a variable. Cool? Cool.
+
+
+
+        ********************************** Indexing **********************************
+
+        * Items in strings/arrays are indexed, beginning with the number 0.
+
+        * The first item in an array/string is always at the index 0.
+
+        * The last item in an array/string is always has the index at variableName.length - 1
+
+        * We can access an individual character in a string
+
+        * as well as an individual values in an array
+
+        * by using bracket notation and the index of the value
+
+
+
+          * var arrayOfLetters = ['a', 'b', 'c', 'd']; // an array.
+
+          * var bestStateInUSA = 'California'; // a string.
+
+
+
+        * So bestStateInUSA[0] would return 'C'
+
+        * arrayOfLetters[0] would return 'a'
+
+        * arrayOfLetters[3] would return 'd'
+
+        * We don't want to count how long 'California' is, but we can easily get the last value!
+
+        * bestStateInUSA[bestStateInUSA.length - 1] would return 'a'
+
+        * Get it? bestStateInUSA.length equals 10, so (bestStateInUSA.length - 1) equal 9!
+
+
+
+      *****************************************************************************************/
+
+    </script>
+
+    <script>
+
+      /*****************************************************************************************
+
+      * while is a reserved word in javascript.
+
+      * It's used to create a block of code that is run repeatedly until a condition is met.
+
+      * The syntax looks like this:
+
+
+
+        while (conditionIsTrue) {
+
+          // run this code
+
+        }
+
+
+
+      *****************************************************************************************/
+
+    </script>
+
+    <script>
+
+      /*****************************************************************************************
+
+      * for is also a reserved word in javascript
+
+      * for is used to construct a for loop
+
+      * The first for loop we'll use iterates over a string or array
+
+      * Here's the syntax:
+
+
+
+        for (initializeCounter; conditionToCheck; incrementCounter) {
+
+          // run this code on each iteration
+
+        }
+
+
+
+      * initializeCounter: Create a variable and give it the starting value
+
+        var i = 0;
+
+        ******************* Don't forget the semi-colon in between! *******************
+
+      * condition to check: Essentially saying until counter variable is at whatever value
+
+        i < arrayOfLetters.length;
+
+        ******************* Don't forget the semi-colon in between! *******************
+
+      * incrementCoutner: Whatever value we want to go up/down by
+
+      * Below are 3 examples of how we could increment or decrement our counter
+
+        i++
+
+          - or -
+
+        i += 12
+
+          - or -
+
+        i--
+
+      *****************************************************************************************/
+
+    </script>
+
+    <script>
+
+      /*************************************** Your Turn *************************************/
+
+      /****************************************************************************
+
+              Try to follow good naming conventions! Be descriptive!
+
+              Don't forget to invoke your functions to make sure they work!
+
+              Sometimes the prompts say to use a specific loop.
+
+              Othertimes, use whichever you want!
+
+       **************************************************************************/
+
+      // 1. Make a function called logTo that takes a positive number as a parameter.
+
+        function logto (anything) {
+          if (anything <0) {
+            return false;
+          }
+          var i=0;
+          while(i<= anything) {
+            console.log(i);
+            i++
+          }
+         }
+         console.log(logTo(100)); 
+
+         
+
+
+        // logTo should use a while loop to log to the console
+
+        // every number between 0 and the number it's passed
+
+        function logTo (Num) {
+          var i = 0;
+          while (i <= num) {
+          if (Num < 0) {
+            return alert('error')  
+
+            i += 1;
+            console.log(i);
+          }        
+          
+          } 
+        }
+
+        
+      // 2. How can we modify logTo to work for positive or negative numbers?
+
+
+
+      // 3. Make a function called addUntil that takes two positive numbers as parameters
+
+        // addUntil should return the result of adding all numbers between the two parameters inclusively
+
+        // so addUntil(1, 3)  // should return 6 because 1 + 2 + 3
+
+        function addUntil (num1, num2) {
+         // total = every nuumber between num1 and num2 added together
+         // create variable i and set it to num1 
+         // create variable total set to 0.  Return total at end of function.  
+        
+         // create a loop
+
+        }
+
+      
+
+
+      // 4. Create a variable called arrayOfNums that holds the numbers 1 - 10
+
+
+
+      // 5. Make a function called addArrayOfNums that takes an array as a parameter
+
+        // It's good habit to make a function that will work in several situations, so we pass the array as a parameter instead of hard coding in that we only use a certain array.
+
+        // addArrayOfNums should return the result of adding all the numbers in the array it's passed.
+
+        // addArrayOfNums([1, 2, 3]) // returns 6
+
+        // var myArr = [1, 2, 3, 4]
+
+        // console.log(addArrayOfNums(myArr)) // logs 10 to the console
+
+
+
+        // 5-a. Invoke addArrayOfNums on arrayOfNums and log it to the console
+
+
+
+        // 6. Create a function that takes an array as a parameter
+
+          // This function (name it what you'd like) will return an array
+
+          // This function will NOT modify the input array
+
+          // This function should add 1 to each number in the input array
+
+          // So, assuming you named your function addOneToEachValue....
+
+          // addOneToEachValue(myArr) // returns [2, 3, 4, 5]
+
+          // and console.log(myArr) // logs [1, 2, 3, 4]
+
+
+
+        // 7. Write a javascript program (function) called joinsArray
+
+          // joinsArray should take an array as a parameter
+
+          // If a value that is not an array is passed, joinsArray should return the boolean
+
+            // false
+
+          // Otherwise joinsArray should return the items in the array joined into one string
+
+          // So:
+
+            // joinsArray('this is a string not an array') // returns false
+
+            // joinsArray([]) // returns '' which is an empty string, since we passed in an
+
+              // empty array
+
+            // joinsArray([1, 2, 3, 4]) // returns '1234'
+
+            // joinsArray(['d', 'o', 'g']) // returns 'dog'
+
+
+
+        // 7.a How could we modify joinsArray to insert a space between each character
+
+          // (but no extra space at the end!)?
+
+
+
+        // 8. ( This is a real life exam question for Computer Science Freshman! )
+
+          // Write a function called fizzBuzz that takes a number as a parameter
+
+          // When invoked, fizzBuzz begins at 0 and until it reaches the input number inclusive
+
+            // logs fizz if the number is divisible by 3
+
+            // logs buzz if the number is divisible by 5
+
+            // logs fizzBuzz if the number is divisible by both 3 and 5
+
+            // logs the number otherwise ( 0 should be logged, yes it's divisible by all the
+
+            // above :)
+
+            /*
+
+              So, fizzBuzz(7) logs:
+
+                0
+
+                1
+
+                2
+
+                'fizz'
+
+                4
+
+                'buzz'
+
+                'fizz'
+
+                7
+
+            */
+
+
+
+          // 8-a. Tougher one. Make a function returnsFizzBuzz that does exactly the same as above, except:
+
+            // It returns a string with each number or word on a new line. (pure function)
+
+    </script>
+
+  </body>
+
+</html>
